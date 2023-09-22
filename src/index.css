@@ -1,4 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
+  overflow-y: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +15,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.fa-images,
+.fa-facebook-f,
+.fa-twitter,
+.fa-instagram {
+  color: #D8D8D8;
+}
+
+div:hover>.fa-images {
+  color: black;
+}
+
+div:hover>.fa-facebook-f {
+  color: #0766FF;
+}
+
+div:hover>.fa-twitter {
+  color: #5DA9DD;
+}
+div:hover>.fa-instagram {
+  color: #820FFF;
+}
+
+br {
+  content: "";
+  margin-bottom: 15px;
+  display: block;
 }
