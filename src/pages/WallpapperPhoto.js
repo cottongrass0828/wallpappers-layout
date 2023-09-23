@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useOutletContext, useParams } from 'react-router-dom'
 import axios from 'axios';
 import PhotoList from '../components/PhotoList';
+import Loading from "../components/Loading";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightLong } from '@fortawesome/free-solid-svg-icons'
@@ -9,13 +10,14 @@ import { faRightLong } from '@fortawesome/free-solid-svg-icons'
 const api = 'https://api.unsplash.com/photos';
 const accessId = process.env.REACT_APP_UNSPLASH_ACCESS;
 export default function WallpapperPhoto() {
-    const [list, currentPage, handlePhotoChange] = useOutletContext();
+    const [list, currentPage, ratelimitRemaining, isLoading, handlePhotoChange, setRateliimitRemaining] = useOutletContext();
     const [image, setimage] = useState({})
     const { id } = useParams()
 
     const handlePhotoDetailChange = async (id) => {
         const response = await axios.get(`${api}/${id}/?client_id=${accessId}`)
         setimage(response.data);
+        setRateliimitRemaining(response.headers['x-ratelimit-remaining'])
     }
 
     useEffect(() => {
@@ -25,6 +27,7 @@ export default function WallpapperPhoto() {
 
     return (
         <div className="flex flex-auto">
+            < Loading isLoading={isLoading} />
             <div className="flex-auto relative h-screen">
                 <img className="min-w-[581px] h-full object-cover" src={image?.urls?.regular} alt={image?.alt_description} />
                 <div className="absolute bottom-0 left-0 bg-white w-[414px] border-l-[1px] border-[#F5F5F5] px-[53px]">
@@ -48,6 +51,7 @@ export default function WallpapperPhoto() {
                         {image?.description === null ? <>(There is no description)</> : image?.description}
                     </div>
                     <button type="button" onClick={() => handlePhotoChange(currentPage)} className="ml-[91px] bg-[#090911] text-white px-[38px] py-[16px] text-[18px]">Generate Radom Wallpapers<FontAwesomeIcon className="ml-[34px]" icon={faRightLong} /></button>
+                    {/* <div className="ml-[91px] mr-[87px]">last request times: {ratelimitRemaining} / 50</div> */}
                 </div>
                 <div className='h-[69px] flex-initial'></div>
                 <div className="ml-[91px] mr-[87px] mb-[39px] flex flex-col-reverse flex-auto">

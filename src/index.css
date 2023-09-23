@@ -24,10 +24,6 @@ code {
   color: #D8D8D8;
 }
 
-div:hover>.fa-images {
-  color: black;
-}
-
 div:hover>.fa-facebook-f {
   color: #0766FF;
 }
