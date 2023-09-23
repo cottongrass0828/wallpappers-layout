@@ -5,9 +5,9 @@ import WallpapperPhoto from './pages/WallpapperPhoto';
 
 function App() {
   return (
-    <div className="flex">
-      <Navbar className="sticky left-0 z-10" />
-      <div>
+    <div className="h-full md:flex">
+      <Navbar className="sticky top-0 md:left-0 z-10" />
+      <div className="h-full">
         <Routes>
           <Route path='/' element={<WallpapperLayout />}>
             <Route path=':id' element={<WallpapperPhoto />}></Route>
