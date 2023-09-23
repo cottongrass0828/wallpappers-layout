@@ -6,9 +6,3 @@ export default function IconButton({ children }) {
 
     )
 }
-
-// <a className={`inline-block ${className ? className : ''}`} href={link}>
-//     <div className="w-[48px] h-[48px] flex justify-center items-center">
-//         {children}
-//     </div>
-// </a>

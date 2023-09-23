@@ -35,6 +35,7 @@ div:hover>.fa-facebook-f {
 div:hover>.fa-twitter {
   color: #5DA9DD;
 }
+
 div:hover>.fa-instagram {
   color: #820FFF;
 }
@@ -43,4 +44,26 @@ br {
   content: "";
   margin-bottom: 15px;
   display: block;
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease-in-out;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#000, #000)
+}
+.link-underline-gray {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#D8D8D8, #D8D8D8)
+}
+
+
+.link-underline:hover {
+  background-size: 100% 1px;
+  background-position: 0 100%
 }
