@@ -57,7 +57,7 @@ export default function WallpapperPhoto() {
                 <div className="ml-[91px] mr-[87px] mb-[39px] flex flex-col-reverse flex-auto">
                     <h6 className='flex justify-between text-[#D8D8D8]'><span>Website layout referenced from <a className='link link-underline link-underline-black hover:text-black' href="https://dribbble.com/janlosert">@janlosert</a>'s work.</span><span className="font-['Abhaya_Libre'] text-[18px] leading-[32px]">2017</span></h6>
                     <div className="border-t-[1px] w-[509px] mb-[40px]"></div>
-                    <PhotoList list={list} />
+                    <PhotoList list={list} currentId={id}  />
                 </div>
             </div>
         </div >
