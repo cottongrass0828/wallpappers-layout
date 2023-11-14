@@ -70,3 +70,22 @@ br {
   background-size: 100% 1px;
   background-position: 0 100%
 }
+
+/* .h-full {
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+} */
+
+.img-full {
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+}
+
+.h-screen {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}

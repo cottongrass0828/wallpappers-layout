@@ -7,7 +7,7 @@ export default memo(({ list, currentId, className }) => {
             {list.filter((photo) => photo.id !== currentId).map(photo => {
                 return (
                     <button key={photo.id} onClick={() => navigate(`/${photo.id}`)} type="button" className="inline-block md:w-[163px] h-full md:mr-[11px]">
-                        <img className="inline-block h-full object-cover" src={photo?.urls?.regular} alt={photo?.alt_description} />
+                        <img className="inline-block img-full object-cover" src={photo?.urls?.regular} alt={photo?.alt_description} />
                     </button>
                 )
             })}
